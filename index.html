@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="bumblebee">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="icon" href="res/favicon.svg">
+    <title>Todo List</title>
+</head>
+<body>
+
+    <div class="author-text">
+        <p>Créer par <a href="https://github.com/Ilyesmessaoudene" target="_blank"><b>MESSAOUDENE ILYES</b></a></p>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+            >
+            <div class="alert-message"></div>
+            <div class="input-section">
+                <input type="text" placeholder="Ecrire une tâche" class="input input-bordered input-secondary w-full max-w-xs" />
+                <input type="date" class="input input-bordered input-secondary w-full max-w-xs schedule-date" />
+                <input id="search" type="text" placeholder="Recherche tâche" class="input input-bordered input-secondary w-full max-w-xs" />
+                <button class="btn btn-secondary add-task-button">
+                    <i class="bx bx-plus bx-sm"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="todos-filter">
+            <div class="dropdown">
+                <label tabindex="0" class="btn m-1">Filtres</label>
+               
+                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li onclick="filterTodos('all')"><a>Toutes les tâches</a></li>
+                    <li onclick="filterTodos('pending')"><a>En cours</a></li>
+                    <li onclick="filterTodos('completed')"><a>Terminer</a></li>
+                 
+                    
+                </ul>
+            </div>
+            <button class="btn btn-secondary delete-all-btn">
+                Tout effacer
+            </button>
+        </div>
+
+         <table class="table w-full">
+            <thead>
+                <tr>
+                    <th>Tâche(s)</th>
+                    <th>Date de fin</th>
+                    <th>Statuts</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="todos-list-body">
+            </tbody>
+        </table>
+
+    </div>
+
+   
+    <div class="theme-switcher">
+        <div class="dropdown dropdown-left">
+            <label tabindex="0" class="btn m-1">
+                <i class='bx bxs-palette bx-sm'></i>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li class="theme-item" theme="cupcake"><a>Normal</a></li>
+                <li class="theme-item" theme="dark"><a>Mode sombre</a></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <script src="js/main.js"></script>
+    <script src="js/theme_switcher.js"></script>
+</body>
+</html>
